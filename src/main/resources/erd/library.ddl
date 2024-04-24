@@ -1,0 +1,49 @@
+DROP TABLE member CASCADE CONSTRAINTS;
+DROP TABLE book CASCADE CONSTRAINTS;
+DROP TABLE loan CASCADE CONSTRAINTS;
+
+CREATE TABLE member (
+    id NUMBER PRIMARY KEY,
+    login_id VARCHAR2(50) NOT NULL,
+    password VARCHAR2(50) NOT NULL,
+    name VARCHAR2(50) NOT NULL
+);
+
+DROP SEQUENCE member_id_seq;
+
+CREATE SEQUENCE member_id_seq
+START WITH 1
+INCREMENT BY 1;
+
+ALTER TABLE member
+ADD CONSTRAINT unique_login_id UNIQUE (login_id);
+
+CREATE TABLE book (
+	id NUMBER PRIMARY KEY,
+	title VARCHAR2(50),
+	author VARCHAR2(50),
+	category VARCHAR2(50)
+);
+
+DROP SEQUENCE book_id_seq;
+
+CREATE SEQUENCE book_id_seq
+START WITH 1
+INCREMENT BY 1;
+
+ALTER TABLE book
+ADD CONSTRAINT unique_title UNIQUE (title);
+
+CREATE TABLE loan (
+    id NUMBER PRIMARY KEY,
+    member_id NUMBER,
+    book_id NUMBER,
+    rent_date DATE,
+    return_date DATE
+);
+
+DROP SEQUENCE loan_id_seq;
+
+CREATE SEQUENCE loan_id_seq
+START WITH 1
+INCREMENT BY 1;

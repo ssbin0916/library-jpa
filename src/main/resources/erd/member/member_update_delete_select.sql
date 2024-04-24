@@ -1,0 +1,14 @@
+UPDATE MEMBER
+SET MID = '아이디4'
+    MPASS = '비밀번호4'
+    MNAME = '이름4',
+    MPHONE = '전화번호4',
+    MEMAIL = '이메일4',
+    MDOB = '4444-44-44'
+WHERE ID = 4;
+
+DELETE MEMBER WHERE ID = 4;
+
+SELECT * FROM MEMBER WHERE MID = '아이디2';
+
+SELECT COUNT(*) cnt FROM MEMBER WHERE MID = '아이디2';
