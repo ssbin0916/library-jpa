@@ -3,8 +3,8 @@ package com.project.library.repository;
 import com.project.library.domain.Book;
 import com.project.library.domain.Loan;
 import com.project.library.domain.Member;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;
